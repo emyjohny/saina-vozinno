@@ -1,0 +1,13 @@
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:active, a:hover {
+    color: orange;
+}
+
+.nav-main {
+    background-color: black;
+    color: white;
+}
