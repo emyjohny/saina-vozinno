@@ -5,3 +5,45 @@
  <img src="{{slide}}" class="image_size" alt="Random slide">
  </div>
 
+ <!-- first category -->
+
+ <div class="first-section row">
+  <div class="col-10">
+    <h6>{{songs}}</h6>
+  </div>
+  <div class="col-2">
+    <a role="button" >
+        <h6> View All</h6>
+    </a>
+  </div>
+</div>
+
+ <div *ngIf="songVideos"> 
+    <carousel>  
+      <div class="carousel-cell"  *ngFor="let s of songVideos">
+        
+        <img src="{{s.thumbUrl}}" class="carousel-image" alt="song video">
+      </div>
+    </carousel>
+  </div>
+
+  <!-- second section -->
+  <div id="categories" class="sections">
+
+  <div class="row">
+    <div class="col-10">
+      <h6>{{movies}}</h6>
+    </div>
+    <div class="col-2">
+      <h6> View All</h6>
+      </div>
+  </div>
+
+  <div *ngIf="movieVideos">
+    <carousel>
+      <div class="carousel-cell"  *ngFor="let m of movieVideos">
+         <img src="{{m.thumbUrl}}" class="carousel-image" alt="movie video" >
+      </div>
+    </carousel>
+  </div>
+  </div>
