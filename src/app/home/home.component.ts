@@ -9,12 +9,16 @@ import { Router} from '@angular/router';
 export class HomeComponent implements OnInit {
   slide ; 
   token;
+  webSeries;
+  webVideos:[];
   songs;
   songVideos:[];
   movies;
   movieVideos:[];
+  hits;
+  hitsVideos:[];
   documentary;
-  videos:[];
+  docVideos:[];
   constructor(private dataservice:DataService,private router:Router) { 
     this.token= JSON.parse(localStorage.getItem('token'));
 
@@ -36,12 +40,17 @@ this.getHomeVideos(this.token);
   getHomeVideos(tokenValue){
     this.dataservice.getHomeVideos(tokenValue)
     .subscribe((resp:any)=>{
-this.songs=resp[0].category
-console.log("category is " +this.songs);
-this.songVideos=resp[0].videos;
-console.log(this.songVideos)
-this.movies=resp[1].category;
-this.movieVideos=resp[1].videos;
+this.webSeries=resp[0].category
+this.webVideos=resp[0].videos;
+this.songs=resp[1].category
+this.songVideos=resp[1].videos;
+this.movies=resp[2].category;
+this.movieVideos=resp[2].videos;
+this.hits=resp[3].category;
+this.hitsVideos=resp[3].videos;
+this.documentary=resp[4].category;
+this.docVideos=resp[4].videos;
+
 
     })
   }

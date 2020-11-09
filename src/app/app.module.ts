@@ -15,7 +15,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { environment } from 'src/environments/environment';
 import { DataService } from './services/data.service';
 import { AuthGuard } from "./auth.guard";
-
+import {IvyCarouselModule} from 'angular-responsive-carousel';
 
 @NgModule({
   declarations: [
@@ -33,7 +33,8 @@ import { AuthGuard } from "./auth.guard";
     FormsModule,
     ReactiveFormsModule,
     AngularFireAuthModule,
-    AngularFireModule.initializeApp(environment.firebase)
+    AngularFireModule.initializeApp(environment.firebase),
+    IvyCarouselModule
   ],
   providers: [AuthGuard,DataService],
   bootstrap: [AppComponent]

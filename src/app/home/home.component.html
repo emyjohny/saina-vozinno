@@ -9,7 +9,7 @@
 
  <div class="first-section row">
   <div class="col-10">
-    <h6>{{songs}}</h6>
+    <h6>{{webSeries}}</h6>
   </div>
   <div class="col-2">
     <a role="button" >
@@ -17,33 +17,103 @@
     </a>
   </div>
 </div>
+<ngb-carousel *ngIf="webVideos">
+  <ng-template ngbSlide *ngFor="let w of webVideos">
+    <div class="wrapper">
+      <img src="{{w.thumbUrl}}" class="carousel-image" alt="web series video">
+    </div>      
+  </ng-template>   
+</ngb-carousel>
 
- <div *ngIf="songVideos"> 
+ 
+<!-- <div *ngIf="songVideos"> 
     <carousel>  
       <div class="carousel-cell"  *ngFor="let s of songVideos">
         
         <img src="{{s.thumbUrl}}" class="carousel-image" alt="song video">
       </div>
     </carousel>
-  </div>
+  </div> -->
 
   <!-- second section -->
-  <div id="categories" class="sections">
+  <div class="sections">
 
   <div class="row">
     <div class="col-10">
-      <h6>{{movies}}</h6>
+      <h6>{{songs}}</h6>
     </div>
     <div class="col-2">
       <h6> View All</h6>
       </div>
   </div>
-
-  <div *ngIf="movieVideos">
+  <ngb-carousel *ngIf="songVideos">
+    <ng-template ngbSlide *ngFor="let s of songVideos">
+      <div class="wrapper">
+        <img src="{{s.thumbUrl}}" class="carousel-image" alt="song video">
+      </div>      
+    </ng-template>   
+  </ngb-carousel>
+  <!-- <div *ngIf="movieVideos">
     <carousel>
       <div class="carousel-cell"  *ngFor="let m of movieVideos">
          <img src="{{m.thumbUrl}}" class="carousel-image" alt="movie video" >
       </div>
     </carousel>
   </div>
-  </div>
+  </div> -->
+
+  <!-- Third section -->
+  <div class="sections">
+
+    <div class="row">
+      <div class="col-10">
+        <h6>{{movies}}</h6>
+      </div>
+      <div class="col-2">
+        <h6> View All</h6>
+        </div>
+    </div>
+    <ngb-carousel *ngIf="movieVideos">
+      <ng-template ngbSlide *ngFor="let m of movieVideos">
+        <div class="wrapper">
+          <img src="{{m.thumbUrl}}" class="carousel-image" alt="movie video">
+        </div>      
+      </ng-template>   
+    </ngb-carousel>
+    <!-- Fourth section -->
+  <div class="sections">
+
+    <div class="row">
+      <div class="col-10">
+        <h6>{{hits}}</h6>
+      </div>
+      <div class="col-2">
+        <h6> View All</h6>
+        </div>
+    </div>
+    <ngb-carousel *ngIf="hitsVideos">
+      <ng-template ngbSlide *ngFor="let h of hitsVideos">
+        <div class="wrapper">
+          <img src="{{h.thumbUrl}}" class="carousel-image" alt="hits video">
+        </div>      
+      </ng-template>   
+    </ngb-carousel>
+
+    <!-- Fifth section -->
+  <div class="sections">
+
+    <div class="row">
+      <div class="col-10">
+        <h6>{{documentary}}</h6>
+      </div>
+      <div class="col-2">
+        <h6> View All</h6>
+        </div>
+    </div>
+    <ngb-carousel *ngIf="docVideos">
+      <ng-template ngbSlide *ngFor="let d of docVideos">
+        <div class="wrapper">
+          <img src="{{d.thumbUrl}}" class="carousel-image" alt="documentary video">
+        </div>      
+      </ng-template>   
+    </ngb-carousel>
