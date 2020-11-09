@@ -21,26 +21,26 @@ export class HomeComponent implements OnInit {
   hitsVideos:[];
   documentary;
   docVideos:[];
+  id="";
+  video_selected=true;
+  
   constructor(private dataservice:DataService,private router:Router) { 
-    this.token= JSON.parse(localStorage.getItem('token'));
-
- console.log("from constructor "+this.token)
-    
+     
   }
  
   ngOnInit(): void {
-    this.getBanner(this.token);
-this.getHomeVideos(this.token);
+    this.getBanner();
+this.getHomeVideos();
   }
-  getBanner(tokenValue){
-     this.dataservice.getBanner(tokenValue)
+  getBanner(){
+     this.dataservice.getBanner()
     .subscribe((resp:any)=>{
       this.slide=resp[0].thumbUrl
       // console.log( this.slide)
     })
   }
-  getHomeVideos(tokenValue){
-    this.dataservice.getHomeVideos(tokenValue)
+  getHomeVideos(){
+    this.dataservice.getHomeVideos()
     .subscribe((resp:any)=>{
 this.webSeries=resp[0].category
 this.webVideos=resp[0].videos;
@@ -57,5 +57,11 @@ this.docVideos=resp[5].videos;
 
 
     })
+  }
+
+  getId(id){
+    // alert(id)
+    this.id =id;
+    this.video_selected = !this.video_selected;
   }
 }

@@ -16,6 +16,7 @@ import { environment } from 'src/environments/environment';
 import { DataService } from './services/data.service';
 import { AuthGuard } from "./auth.guard";
 import {IvyCarouselModule} from 'angular-responsive-carousel';
+import { VideoComponent } from './video/video.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {IvyCarouselModule} from 'angular-responsive-carousel';
     NavbarComponent,
     HomeComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    VideoComponent
   ],
   imports: [
     BrowserModule,
