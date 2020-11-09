@@ -13,6 +13,8 @@ export class HomeComponent implements OnInit {
   webVideos:[];
   songs;
   songVideos:[];
+  sainaOriginals;
+  originalsVideos:[];
   movies;
   movieVideos:[];
   hits;
@@ -44,12 +46,14 @@ this.webSeries=resp[0].category
 this.webVideos=resp[0].videos;
 this.songs=resp[1].category
 this.songVideos=resp[1].videos;
-this.movies=resp[2].category;
-this.movieVideos=resp[2].videos;
-this.hits=resp[3].category;
-this.hitsVideos=resp[3].videos;
-this.documentary=resp[4].category;
-this.docVideos=resp[4].videos;
+this.sainaOriginals=resp[2].category;
+this.originalsVideos=resp[2].videos;
+this.movies=resp[3].category;
+this.movieVideos=resp[3].videos;
+this.hits=resp[4].category;
+this.hitsVideos=resp[4].videos;
+this.documentary=resp[5].category;
+this.docVideos=resp[5].videos;
 
 
     })

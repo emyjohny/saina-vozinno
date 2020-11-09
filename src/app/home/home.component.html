@@ -25,16 +25,6 @@
   </ng-template>   
 </ngb-carousel>
 
- 
-<!-- <div *ngIf="songVideos"> 
-    <carousel>  
-      <div class="carousel-cell"  *ngFor="let s of songVideos">
-        
-        <img src="{{s.thumbUrl}}" class="carousel-image" alt="song video">
-      </div>
-    </carousel>
-  </div> -->
-
   <!-- second section -->
   <div class="sections">
 
@@ -46,23 +36,37 @@
       <h6> View All</h6>
       </div>
   </div>
-  <ngb-carousel *ngIf="songVideos">
-    <ng-template ngbSlide *ngFor="let s of songVideos">
-      <div class="wrapper">
+  <div *ngIf="songVideos"> 
+    <carousel>  
+      <div class="carousel-cell"  *ngFor="let s of songVideos">
+        
         <img src="{{s.thumbUrl}}" class="carousel-image" alt="song video">
-      </div>      
-    </ng-template>   
-  </ngb-carousel>
-  <!-- <div *ngIf="movieVideos">
-    <carousel>
-      <div class="carousel-cell"  *ngFor="let m of movieVideos">
-         <img src="{{m.thumbUrl}}" class="carousel-image" alt="movie video" >
       </div>
     </carousel>
   </div>
-  </div> -->
-
+</div>
   <!-- Third section -->
+  <div class="sections">
+
+    <div class="row">
+      <div class="col-10">
+        <h6>{{sainaOriginals}}</h6>
+      </div>
+      <div class="col-2">
+        <h6> View All</h6>
+        </div>
+    </div>
+    <div *ngIf="originalsVideos"> 
+      <carousel>  
+        <div class="carousel-cell"  *ngFor="let o of originalsVideos">
+          <img src="{{o.thumbUrl}}" class="carousel-image" alt="originals video">
+        </div>
+      </carousel>
+    </div>
+  
+    </div>
+
+     <!-- fourth section -->
   <div class="sections">
 
     <div class="row">
@@ -73,14 +77,16 @@
         <h6> View All</h6>
         </div>
     </div>
-    <ngb-carousel *ngIf="movieVideos">
-      <ng-template ngbSlide *ngFor="let m of movieVideos">
-        <div class="wrapper">
+    <div *ngIf="movieVideos"> 
+      <carousel>  
+        <div class="carousel-cell"  *ngFor="let m of movieVideos">
           <img src="{{m.thumbUrl}}" class="carousel-image" alt="movie video">
-        </div>      
-      </ng-template>   
-    </ngb-carousel>
-    <!-- Fourth section -->
+        </div>
+      </carousel>
+    </div>
+  
+    </div>
+    <!-- Fifth section -->
   <div class="sections">
 
     <div class="row">
@@ -91,15 +97,16 @@
         <h6> View All</h6>
         </div>
     </div>
-    <ngb-carousel *ngIf="hitsVideos">
-      <ng-template ngbSlide *ngFor="let h of hitsVideos">
-        <div class="wrapper">
+    <div *ngIf="hitsVideos"> 
+      <carousel>  
+        <div class="carousel-cell"  *ngFor="let h of hitsVideos">
           <img src="{{h.thumbUrl}}" class="carousel-image" alt="hits video">
-        </div>      
-      </ng-template>   
-    </ngb-carousel>
-
-    <!-- Fifth section -->
+        </div>
+      </carousel>
+    </div>
+  
+  </div>
+    <!-- sixth section -->
   <div class="sections">
 
     <div class="row">
@@ -110,10 +117,12 @@
         <h6> View All</h6>
         </div>
     </div>
-    <ngb-carousel *ngIf="docVideos">
-      <ng-template ngbSlide *ngFor="let d of docVideos">
-        <div class="wrapper">
+    <div *ngIf="docVideos"> 
+      <carousel>  
+        <div class="carousel-cell"  *ngFor="let d of docVideos">
           <img src="{{d.thumbUrl}}" class="carousel-image" alt="documentary video">
-        </div>      
-      </ng-template>   
-    </ngb-carousel>
+        </div>
+      </carousel>
+    </div>
+    
+    </div>

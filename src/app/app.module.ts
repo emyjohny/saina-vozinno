@@ -17,6 +17,7 @@ import { DataService } from './services/data.service';
 import { AuthGuard } from "./auth.guard";
 import {IvyCarouselModule} from 'angular-responsive-carousel';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +36,7 @@ import {IvyCarouselModule} from 'angular-responsive-carousel';
     AngularFireAuthModule,
     AngularFireModule.initializeApp(environment.firebase),
     IvyCarouselModule
+    
   ],
   providers: [AuthGuard,DataService],
   bootstrap: [AppComponent]
