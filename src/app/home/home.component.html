@@ -6,7 +6,7 @@
  </div>
 
  <!-- first category -->
-<!-- 
+
  <div class="first-section row">
   <div class="col-10">
     <h6>{{webSeries}}</h6>
@@ -17,14 +17,15 @@
     </a>
   </div>
 </div>
-<ngb-carousel *ngIf="webVideos">
-  <ng-template ngbSlide *ngFor="let w of webVideos">
-    <div class="wrapper">
-      <img src="{{w.thumbUrl}}" class="carousel-image" alt="web series video" (click)="getId(w.videoId)">
-    </div>      
-  </ng-template>   
-</ngb-carousel> -->
 
+<div *ngIf="webVideos"> 
+  <carousel>  
+    <div class="carousel-cell"  *ngFor="let w of webVideos">
+      
+      <img src="{{w.thumbUrl}}" class="carousel-image" alt="song video" (click)="getId(w.videoId)">
+    </div>
+  </carousel>
+</div>
   <!-- second section -->
   <div class="sections">
 
@@ -46,7 +47,7 @@
   </div>
 </div>
   <!-- Third section -->
-  <!-- <div class="sections">
+  <div class="sections">
 
     <div class="row">
       <div class="col-10">
@@ -64,7 +65,7 @@
       </carousel>
     </div>
   
-    </div> -->
+    </div>
 
      <!-- fourth section -->
   <div class="sections">
@@ -87,7 +88,7 @@
   
     </div>
     <!-- Fifth section -->
-  <!-- <div class="sections">
+  <div class="sections">
 
     <div class="row">
       <div class="col-10">
@@ -105,9 +106,9 @@
       </carousel>
     </div>
   
-  </div> -->
+  </div>
     <!-- sixth section -->
-  <!-- <div class="sections">
+  <div class="sections">
 
     <div class="row">
       <div class="col-10">
@@ -127,6 +128,6 @@
     
     </div>
   </div>
-   -->
-   </div>
-<app-video [id]="id"></app-video>
+  
+  
+<app-video [id]="id" [movieVideos]="movieVideos"></app-video>

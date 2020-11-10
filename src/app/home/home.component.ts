@@ -58,10 +58,10 @@ this.docVideos=resp[5].videos;
 
     })
   }
-
+ 
   getId(videoId){
     // alert(id)
     this.id =videoId;
     // this.hide_player = !this.hide_player;
-  }
-}
+    
+}}
