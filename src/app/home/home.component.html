@@ -1,6 +1,6 @@
 
 <!-- banner image display -->
-<div id="home" *ngIf="video_selected">
+<div id="home" *ngIf="id? false:true">
 <div class="banner" *ngIf="slide">
  <img src="{{slide}}" class="image_size" alt="Random slide">
  </div>
@@ -59,7 +59,7 @@
     <div *ngIf="originalsVideos"> 
       <carousel>  
         <div class="carousel-cell"  *ngFor="let o of originalsVideos">
-          <img src="{{o.thumbUrl}}" class="carousel-image" alt="originals video">
+          <img src="{{o.thumbUrl}}" class="carousel-image" alt="originals video" (click)="getId(o.videoId)">
         </div>
       </carousel>
     </div>
@@ -80,7 +80,7 @@
     <div *ngIf="movieVideos"> 
       <carousel>  
         <div class="carousel-cell"  *ngFor="let m of movieVideos">
-          <img src="{{m.thumbUrl}}" class="carousel-image" alt="movie video">
+          <img src="{{m.thumbUrl}}" class="carousel-image" alt="movie video" (click)="getId(m.videoId)">
         </div>
       </carousel>
     </div>
@@ -100,7 +100,7 @@
     <div *ngIf="hitsVideos"> 
       <carousel>  
         <div class="carousel-cell"  *ngFor="let h of hitsVideos">
-          <img src="{{h.thumbUrl}}" class="carousel-image" alt="hits video">
+          <img src="{{h.thumbUrl}}" class="carousel-image" alt="hits video" (click)="getId(h.videoId)">
         </div>
       </carousel>
     </div>
@@ -120,7 +120,7 @@
     <div *ngIf="docVideos"> 
       <carousel>  
         <div class="carousel-cell"  *ngFor="let d of docVideos">
-          <img src="{{d.thumbUrl}}" class="carousel-image" alt="documentary video">
+          <img src="{{d.thumbUrl}}" class="carousel-image" alt="documentary video" (click)="getId(d.videoId)">
         </div>
       </carousel>
     </div>
@@ -128,4 +128,5 @@
     </div>
   </div>
    -->
-<app-video [id]="id" *ngIf="!video_selected"></app-video>
+   </div>
+<app-video [id]="id"></app-video>

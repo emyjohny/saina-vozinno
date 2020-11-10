@@ -1,16 +1,80 @@
-<div class="video_details">
-<video id='hls-example'  class="video-js vjs-default-skin" width="400" height="300" controls>
-    <source type="application/x-mpegURL" src="https://cdn.sabha.tv/videos/hls/28ba6723-1498-492b-a7d8-0c61db2b4303.m3u8">
-    </video>
-
+<div class="video_details" *ngIf="id" >
     <div class="row">
-        <div class="col-sm-6">
-            <button type="button" class="btn btn-dark" ><i class="fas fa-play"></i> Play</button>
-            <button type="button" class="btn btn-dark" > Watch Trailer</button>
+        <div class="col-sm-10">
+
+            <video id='hls-example' poster="{{details.videoBgUrl}}" class="video-js vjs-default-skin" width="100%"controls>
+                <source type="video/mp4" src="{{details.videoUrl.original}}">
+                </video>
+            &nbsp;
+                <div class="row">
+                    <div class="col-sm-6 left">
+                        <button type="button" class="btn btn-dark" (click)="playVideo()" ><i class="fas fa-play"></i> Play</button>
+                        <button type="button" class="btn btn-dark" > Watch Trailer</button>
+                    </div>
+                    <div class="col-sm-6 right">
+                        <button type="button" class="btn btn-dark"><i class="far fa-thumbs-up"></i></button>
+                        <button type="button" class="btn btn-dark"><i class="fas fa-heart"></i></button>
+                        <button type="button" class="btn btn-dark"><i class="fas fa-share-alt"></i></button>
+                        <button type="button" class="btn btn-dark"><i class="fas fa-download"></i></button>
+                        </div>
+                </div>
+            &nbsp;
+                <div class="row detail" >
+                   
+                     <div class="col-sm-6"> <h5>{{details['title']}}</h5> 
+                        {{details.category}}|{{details.duration}}|{{details.maturityRating}}|⭐{{details.rating}}</div>
+                    <div class="col-sm-6">
+                        <!-- <fieldset>
+                            <legend>Subscribe</legend>
+                            👑Get Premium
+                            <button type="button" class="btn btn-dark"></button>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Rent</legend>
+                            <button type="button" class="btn btn-dark">90</button>
+                        </fieldset> -->
+                    </div>
+                </div>
+                <p>{{details.synopsis}}</p>
         </div>
-        <div class="col-sm-6">
-            <button type="button" class="btn btn-dark"><i class="fas fa-heart"></i></button>
-            <button type="button" class="btn btn-dark"><i class="fas fa-share-alt"></i></button>
+        <div class="col-sm-2">
+            <!-- <div > 
+                <carousel>  
+                    <div class="carousel-inner ">
+                  <div class="carousel-cell vertical" >
+                    <img src="{{details.thumbUrl}}" class="carousel-image" alt="movie video" >
+                    <img src="{{details.thumbUrl}}" class="carousel-image" alt="movie video" >
+                    <img src="{{details.thumbUrl}}" class="carousel-image" alt="movie video" >
+                  </div>
+                </div>
+                </carousel>
+              </div> -->
+
+
+              <div class="container">
+    
+                <div class="row">
+                    <div id="myCarousel" class="carousel slide vertical">
+                        <!-- Carousel items -->
+                        <div class="carousel-inner">
+                            <div class="active item">
+                                <img src="http://placehold.it/600x400&text=First+Slide">
+                            </div>
+                            <div class="item">
+                                <img src="http://placehold.it/600x400&text=Second+Slide">
+                            </div>
+                            <div class="item">
+                                <img src="http://placehold.it/600x400&text=Third+Slide">
+                            </div>
+                        </div>
+                        <!-- Carousel nav -->
+                        <a class="carousel-control left" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+                        <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+    
 </div>

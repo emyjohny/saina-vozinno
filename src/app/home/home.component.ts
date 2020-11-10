@@ -22,7 +22,7 @@ export class HomeComponent implements OnInit {
   documentary;
   docVideos:[];
   id="";
-  video_selected=true;
+  // hide_player=true;
   
   constructor(private dataservice:DataService,private router:Router) { 
      
@@ -59,9 +59,9 @@ this.docVideos=resp[5].videos;
     })
   }
 
-  getId(id){
+  getId(videoId){
     // alert(id)
-    this.id =id;
-    this.video_selected = !this.video_selected;
+    this.id =videoId;
+    // this.hide_player = !this.hide_player;
   }
 }
